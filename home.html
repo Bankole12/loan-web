@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Pisto Dashboard</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+      <link rel="icon" href="images/fevicon.png" type="image/png" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css" />
+      <!-- site css -->
+      <link rel="stylesheet" href="css/style.css" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="css/responsive.css" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet" href="css/bootstrap-select.css" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body class="dashboard dashboard_1">
+      <!-- Modal-->
+      <div class="modal fade" role="dialog">
+         <div class="modal-dialog">
+             <!-- Content -->
+             <div class="modal-content">
+                 <div class="modal-header">
+                   <p class="modal-title">Loading...</p>
+                 </div>
+                 <div class="modal-body">
+                   <div class="loader"></div> 
+                 </div>
+             </div>
+         </div>
+     </div>
+     
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <!-- <div class="logo_section">
+                        <a href="index.html"><img class="logo_icon img-responsive" src="images/logo/logo_icon.png" alt="#" /></a>
+                     </div> -->
+                  </div>
+                  <div class="sidebar_user_info">
+                     <div class="user_profle_side">
+                        <div class="user_img"><img class="img-responsive" src="images/layout_img/user.svg" alt="#" /></div>
+                        <div class="user_info">
+                           <h6>User User</h6>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+                  <h4>General</h4>
+                  <ul class="list-unstyled components">
+                     <li class="active">
+                        <a href="#dashboard"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <div class="logo_section">
+                           <a href="index.html"><img class="img-responsive" src="images/logo/logo.png" alt="#" /></a>
+                        </div>
+                        <div class="right_topbar">
+                           <div class="icon_info"> 
+                              <ul>
+                                 <li><a href="#"><i class="fa fa-bell-o"></i><span class="badge">2</span></a></li>
+                                 <li><a href="#"><i class="fa fa-question-circle"></i></a></li>
+                                 <li><a href="#"><i class="fa fa-envelope-o"></i><span class="badge">3</span></a></li>
+                              </ul>
+                              <ul class="user_profile_dd">
+                                 <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="images/layout_img/user.svg" alt="#" /><span class="name_user">John David</span></a>
+                                    <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="#">My Profile</a>
+                                       <a class="dropdown-item" href="#">Settings</a>
+                                       <a class="dropdown-item" href="#">Help</a>
+                                       <a class="dropdown-item" href="#"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </nav>
+               </div>
+               <!-- end topbar -->
+               <!-- dashboard inner -->
+               <div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>Dashboard</h2>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row column1">
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full counter_section margin_bottom_30 yellow_bg">
+                              <div class="counter_icon">
+                                 <div> 
+                                    <i class="fa fa-user"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no" id="users"></p>
+                                    <p class="head_counter">Users</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full counter_section margin_bottom_30 blue_bg">
+                              <div class="counter_icon">
+                                 <div> 
+                                    <i class="fa fa-money"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no" id="total_loans"></p>
+                                    <p class="head_counter">Loans</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full counter_section margin_bottom_30 green_bg">
+                              <div class="counter_icon">
+                                 <div> 
+                                    <i class="fa fa-thumbs-o-up"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no" id="approved_loans"></p>
+                                    <p class="head_counter">Approved Loans</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                           <div class="full counter_section margin_bottom_30 red_bg">
+                              <div class="counter_icon">
+                                 <div> 
+                                    <i class="fa fa-pencil-square-o"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no" id="pending_loans"></p>
+                                    <p class="head_counter">Pending Loans</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- line chart -->
+                     <div class="row column2 graph margin_bottom_30">
+                        <div class="col-md-l2 col-lg-12">
+                           <div class="white_shd full">
+                              <div class="full graph_head">
+                                 <div class="heading1 margin_0">
+                                    <h2>Daily Chart</h2>
+                                 </div>
+                              </div>
+                              <div class="full graph_revenue">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="content">
+                                          <div class="area_chart">
+                                             <!-- Card Body -->
+                                             <div class="card-body">
+                                                <div class="chart-area">
+                                                   <canvas id="myAreaChart"></canvas>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- end line chart -->
+                     <!-- charts -->
+                     <div class="row column1 ">
+                        <!-- bar chart-->
+                        <div class="col-md-8 col-lg-8 margin_bottom_30">
+                           <div class="white_shd full">
+                              <div class="full graph_head">
+                                 <div class="heading1 margin_0">
+                                    <h2>Monthly Chart</h2>
+                                 </div>
+                              </div>
+                              <div class="full graph_revenue">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="content">
+                                          <div class="area_chart">
+                                             <!-- Card Body -->
+                                             <div class="card-body">
+                                                <div class="chart-bar">
+                                                   <canvas id="myBarChart"></canvas>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- end bar chart -->
+
+                         <!-- pie chart-->
+                         <div class="col-md-4 col-lg-4 margin_bottom_30">
+                           <div class="white_shd full">
+                              <div class="full graph_head">
+                                 <div class="heading1 margin_0">
+                                    <h2>Distribution Chart</h2>
+                                 </div>
+                              </div>
+                              <div class="full graph_revenue">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="content">
+                                          <div class="area_chart">
+                                             <!-- Card Body -->
+                                             <div class="card-body">
+                                                <div class="chart-pie">
+                                                   <canvas id="myPieChart"></canvas>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!-- end pie chart -->
+                     </div>
+                     <!-- end charts -->
+                     <!-- recent activities -->
+                     <div class="row column4 graph">
+                        <div class="col-md-6">
+                           <div class="dash_blog">
+                              <div class="dash_blog_inner">
+                                 <div class="dash_head">
+                                    <h3><span><i class="fa fa-calendar"></i> 6 July 2018</span></h3>
+                                 </div>
+                                 <div class="list_cont">
+                                    <p>Today Tasks for Ronney Jack</p>
+                                 </div>
+                                 <div class="task_list_main">
+                                    <ul class="task_list">
+                                       <li>Meeting about plan for Admin Template 2018<br><strong>10:00 AM</strong></li>
+                                       <li>Create new task for Dashboard<br><strong>10:00 AM</strong></li>
+                                       <li>Meeting about plan for Admin Template 2018<br><strong>11:00 AM</strong></li>
+                                       <li>Create new task for Dashboard<br><strong>10:00 AM</strong></li>
+                                       <li>Meeting about plan for Admin Template 2018<br><strong>02:00 PM</strong></li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 ">
+                           <div class="dash_blog">
+                              <div class="dash_blog_inner">
+                                 <div class="dash_head">
+                                    <h3><span><i class="fa fa-comments-o"></i> Updates</span></h3>
+                                 </div>
+                                 <div class="list_cont">
+                                    <p>User confirmation</p>
+                                 </div>
+                                 <div class="msg_list_main">
+                                    <ul class="msg_list">
+                                       <li>
+                                          <span><img src="images/layout_img/user.svg" class="img-responsive" alt="#" /></span>
+                                          <span>
+                                          <span class="name_user">Herman Beck</span>
+                                          <span class="msg_user">Sed ut perspiciatis unde omnis.</span>
+                                          <span class="time_ago">12 min ago</span>
+                                          </span>
+                                       </li>
+                                       <li>
+                                          <span><img src="images/layout_img/user.svg" class="img-responsive" alt="#" /></span>
+                                          <span>
+                                          <span class="name_user">John Smith</span>
+                                          <span class="msg_user">On the other hand, we denounce.</span>
+                                          <span class="time_ago">12 min ago</span>
+                                          </span>
+                                       </li>
+                                       <li>
+                                          <span><img src="images/layout_img/user.svg" class="img-responsive" alt="#" /></span>
+                                          <span>
+                                          <span class="name_user">John Smith</span>
+                                          <span class="msg_user">Sed ut perspiciatis unde omnis.</span>
+                                          <span class="time_ago">12 min ago</span>
+                                          </span>
+                                       </li>
+                                       <li>
+                                          <span><img src="images/layout_img/user.svg" class="img-responsive" alt="#" /></span>
+                                          <span>
+                                          <span class="name_user">John Smith</span>
+                                          <span class="msg_user">On the other hand, we denounce.</span>
+                                          <span class="time_ago">12 min ago</span>
+                                          </span>
+                                       </li>
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                      <!-- end recent activities -->
+                  </div>
+                  <!-- footer -->
+                  <div class="container-fluid">
+                     <div class="footer">
+                        <p>Copyright © 2018 Designed by html.design. All rights reserved.</p>
+                     </div>
+                  </div>
+               </div>
+               <!-- end dashboard inner -->
+            </div>
+         </div>
+      </div>
+      <!-- jQuery -->
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+      <!-- chart js -->
+      <script src="js/Chart.min.js"></script>
+      <!-- nice scrollbar -->
+      <script src="js/perfect-scrollbar.min.js"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="js/home.js"></script>
+      <!-- <script src="js/demo/chart-area-demo.js"></script> -->
+      <!-- <script src="js/demo/chart-pie-demo.js"></script> -->
+      <!-- <script src="js/demo/chart-bar-demo.js"></script> -->
+   </body>
+</html>
